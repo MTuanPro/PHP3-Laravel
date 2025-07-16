@@ -1,0 +1,18 @@
+1: router nằm ở file routers/web.php
+2. controller nằm ở các file trong thư mục app/http/controllers/
+3.model nằm ở các file trong thư mục app/models(mỗi model là 1 bảng trong db)
+4. view nằm trong thư mục resources/views/
+(nên phân vùng các foder để dễ quản lý)
+5. cấu hình hệ thống ở file .env
+    - chú ý kết nối cơ sở dữ liệu
+
+DB_CONNECTION=mysql // loại csdl
+DB_HOST=127.0.0.1   // host kết nối
+DB_PORT=3306 // cổng kết nối 
+DB_DATABASE=project_wd20101 // tên db
+DB_USERNAME=root
+DB_PASSWORD=
+
+6. file .env thiếu key thì chạy : php artisan key:generate
+7. khi dự dán hoàn thiện chuyển app_debug=true sang false 
+chuyển từ lỗi dừng hệ thống sang lỗi chức năng . ( trick tốt nghiệp)

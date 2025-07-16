@@ -1,0 +1,13 @@
+chạy lệnh "composer global require laravel/installer" // chỉ cần chạy 1 lần khi tạo project mới chỉ cần chạy lệnh dưới
+chạy lệnh "laravel new example-app (example-app là tên mã nguồn)
+    - khi được hỏi kit: nhập none
+    - khi được hỏi testing : nhập 0 
+    - khi được hỏi dùng db gì nhập mysql
+    - khi được hỏi run the default database migration: nhập no 
+    - khi được hỏi có chạy npm install and npm run build : nhập no
+cd vào thư mục project
+khởi chạy ứng dụng "php artisan ser/serve"
+    - nêu muốn chạy dưới 1 cổng khác cổng default 8000 : php artisan ser --port....
+nếu gặp lỗi "connection : mysql, sql: select * from `sesions"
+    - vào file .env tìm dòng "session_DRIVER =database" => chuyển database - file
+    

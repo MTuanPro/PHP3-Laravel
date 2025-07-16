@@ -1,0 +1,10 @@
+1. kiểm tra phiên bản php bằng php -v(>8.2)
+    - nếu chưa cài phiên bản trên 8.2 thì update phiên bản php
+    - sau khi update thì cài lại composer
+2 extention gợi ý
+    - laravel blade formtatter
+    - laravel blade snippets
+    - laravel goto controller
+    - laravel goto view
+    - laravel blade
+     
