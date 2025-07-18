@@ -19,5 +19,29 @@
 - thực hiện refresh database
 
 2.Seeder: dùng để tạo dữ liệu mẫu trong các bảng( dữ liệu test)
-3.Factory: tạo nhiều dữ liệu dưới dạng data test ( dùng faker)
+    - Dùng Query builder
+    - Hưỡng dân:
+     + Chạy lệnh "php artisan make:seeder TenBangSeeder"
+     + FIle sẽ được khởi tạo trong folfer database/seeder/TenBangSeeder.php
+     + trong file vừa khởi tạo sẽ có hàm run():void
+        {
+            Khai báo thông tin dữ liệu mẫu 
+        }
+     + sau khi đã khai báo dữ liệu mẫu cần tạo thì chạy lệnh : "php artisan db:seed --class=TenBangSeeder"
+     Hoặc khai báo class TenBangSeeder vào trong hàm run ở file database/seeder/DatabaseSeeder.php
+     và chạy lệnh "php artisan db:seed" 
+     (* Lưu ý khi chạy lệnh này sẽ gọi đến tất cả các class khai báo trong hàm run của file DatabaseSeeder )
+     chú ý khi chạy "php artisan db:seed" phải đảm bảo việc xử lý các lỗi ràng buộc dữ liệu
+
+3.Factory: tạo nhiều dữ liệu dưới dạng data test ( dùng faker) 
     - đối với factory thì sẽ cần model 
+    - Dùng eloquent 
+    - Sử dụng thư viện php faker 
+    - Hưỡng Dẫn :
+        + Chạy lệnh tạo model cho bảng : "php artisan make:model Product
+        (- trong model Product sử dụng use HasFactory trong class)
+        + Chạy lệnh tạo factory : php artisan make:factory ProductFactory --model=Product
+        (Nếu muốn tạo đồng thời file model và factory : php artisan make:model Product -f)
+        + trong file model khai báo tên bảng , trường dữ liệu
+        + trong hàm definition ở file factory: khai báo return dữ liệu fake
+        + gọi class của model (Product::factory()) sau đó chạy "php artisan db:seed"
