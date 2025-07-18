@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('san_pham', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // Tên danh mục
+            $table->string('slug')->unique(); // Đường dẫn thân thiện
+            $table->text('description')->nullable(); // Mô tả danh mục
+            $table->boolean('is_active')->default(true); // Trạng thái hoạt động
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('san_pham');
+        Schema::dropIfExists('categories');
     }
 };
