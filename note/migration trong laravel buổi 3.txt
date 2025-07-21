@@ -29,6 +29,13 @@
         }
      + sau khi đã khai báo dữ liệu mẫu cần tạo thì chạy lệnh : "php artisan db:seed --class=TenBangSeeder"
      Hoặc khai báo class TenBangSeeder vào trong hàm run ở file database/seeder/DatabaseSeeder.php
+
+         chạy các seeder  của seeder
+             $this->call([
+                 CategorySeeder::class,
+                 CustomerSeeder::class,
+                ProductSeeder::class,
+             ]);
      và chạy lệnh "php artisan db:seed" 
      (* Lưu ý khi chạy lệnh này sẽ gọi đến tất cả các class khai báo trong hàm run của file DatabaseSeeder )
      chú ý khi chạy "php artisan db:seed" phải đảm bảo việc xử lý các lỗi ràng buộc dữ liệu
@@ -39,9 +46,18 @@
     - Sử dụng thư viện php faker 
     - Hưỡng Dẫn :
         + Chạy lệnh tạo model cho bảng : "php artisan make:model Product
-        (- trong model Product sử dụng use HasFactory trong class)
+        (- trong model Product sử dụng use HasFactory trong class thì mới chạy factory được ) 
+        (- nếu bảng trong csdl trùng vs model thì bỏ qua còn khác thì phải protected $table ='tenbang')
+
         + Chạy lệnh tạo factory : php artisan make:factory ProductFactory --model=Product
         (Nếu muốn tạo đồng thời file model và factory : php artisan make:model Product -f)
         + trong file model khai báo tên bảng , trường dữ liệu
         + trong hàm definition ở file factory: khai báo return dữ liệu fake
+        + chạy bằng cách viết lệnh vào trong hàm run ở file database/seeder/DatabaseSeeder.php
+        Chạy các factory để tạo dữ liệu mẫu
+        Category::factory()->count(50)->create();
+
+        Product::factory()->count(400)->create(); 
+        Customer::factory()->count(100)->create();
+
         + gọi class của model (Product::factory()) sau đó chạy "php artisan db:seed"
