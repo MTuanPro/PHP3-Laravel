@@ -16,3 +16,10 @@ DB_PASSWORD=
 6. file .env thiếu key thì chạy : php artisan key:generate
 7. khi dự dán hoàn thiện chuyển app_debug=true sang false 
 chuyển từ lỗi dừng hệ thống sang lỗi chức năng . ( trick tốt nghiệp)
+
+. vòng đời 
+1. Người dùng truy cập website qua route
+2.Ứng dụng nhận phản hồi từ người dùng truy cập vào route
+3.route gọi đến controller để xử lý logic
+4.controller xử lý logic , có thể gọi dữ liệu qua model
+5.Sau khi controller xử lý logic xong sẽ return về view(blade.view)

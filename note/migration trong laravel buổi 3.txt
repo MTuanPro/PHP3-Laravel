@@ -56,7 +56,6 @@
         + chạy bằng cách viết lệnh vào trong hàm run ở file database/seeder/DatabaseSeeder.php
         Chạy các factory để tạo dữ liệu mẫu
         Category::factory()->count(50)->create();
-
         Product::factory()->count(400)->create(); 
         Customer::factory()->count(100)->create();
 

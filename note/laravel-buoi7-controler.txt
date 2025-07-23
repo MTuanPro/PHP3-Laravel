@@ -1,0 +1,2 @@
+1.để tạo controller dùng lệnh "php artisan make:controller Tencontroller"
+    - Để tạo 1 controller resource thì sử dụng:" php artisan make:controller Tencontroller --resource"
