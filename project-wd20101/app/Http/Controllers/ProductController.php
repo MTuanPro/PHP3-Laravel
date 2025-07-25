@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -11,8 +12,12 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         //đây là trang hiển thị danh sách sản phẩm
-        dd("Đây là trang hiển thị danh sách sản phẩm");
+        // dd("Đây là trang hiển thị danh sách sản phẩm");
+        $title = "Danh sách sản phẩm"; // Biến để truyền tiêu đề cho view
+        $products = Product::all(); // Lấy tất cả sản phẩm từ database
+        return view('product.index', compact('products', 'title')); // Trả về view với dữ liệu sản phẩm
     }
 
     /**

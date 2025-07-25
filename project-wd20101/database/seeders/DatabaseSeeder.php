@@ -26,12 +26,11 @@ class DatabaseSeeder extends Seeder
 
 
         // chạy các seeder  của seeder
-        // $this->call([
-        //     CategorySeeder::class,
-        //     CustomerSeeder::class,
-        //     ProductSeeder::class,
-
-        // ]);
+        $this->call([
+            CategorySeeder::class,
+            CustomerSeeder::class,
+            ProductSeeder::class,
+        ]);
         // Chạy các factory để tạo dữ liệu mẫu
         // Category::factory()->count(50)->create();
 
